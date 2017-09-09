@@ -35,8 +35,8 @@ header {
 }
 
 header .headline {
-  max-width: 640px;
-  margin: 0 auto;
+/*  max-width: 640px;
+*/  margin: 0 auto;
 }
 
 header .headline h1 {
