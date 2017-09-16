@@ -14,42 +14,46 @@
 
 <body>
     <style>
-        input[type=text],
-        select {
-            width: 90%;
-            height: 70px;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
+
+
+
+
+        .blue
+        {
+            border-color: #4286f4 !important;
+
         }
 
-        input[type=submit] {
-            width: 50%;
-            background-color: #24745B;
-            color: white;
-            padding: 14px 20px;
-            border-width: 7px;
-            border-color: #c5cfe2;
+        .box
+         {
+            width: 80%;
+            height: 70px;
+            background-color: white;
+            color: #687589;
+            /*padding: 140px 20px;*/
+            
+            border-width: 2px;
+            border-color: #cbdaf2;
             border-style: solid;
             border-radius: 7px;
             cursor: pointer;
             font-size: 30px;
             margin-top: 40px;
             margin-bottom: 30px;
-            box-shadow: 0px 0px 35px #565656;
+            /*box-shadow: 0px 0px 35px #565656;*/
             font-weight: bold;
 
             /*#24745B*/
         }
 
+       
         .sub {
             width: 50%;
             background-color: #24745B;
             color: white;
-            padding: 14px 20px;
+            /*padding: 14px 20px;*/
+            padding-top: 20px;
+            padding-bottom: 25px;
             border-width: 7px;
             border-color: #c5cfe2;
             border-style: solid;
@@ -64,20 +68,22 @@
             /*#24745B*/
         }
 
-        input[type=submit]:hover {
-            background-color: #45a049;
-        }
-
-        label {
-            font-size: 36px;
-            color: white;
-        }
 
         .border {
             border-radius: 5px;
             background-color: #108B5E;
             padding: 20px;
             border-color: #108B5E;
+
+    
+
+        }
+
+
+        h4
+        {
+            color: white;
+            font-size: 40px;
         }
     </style>
     <header style="background-color: #108c5e;">
@@ -89,29 +95,77 @@
         </div>
         <hr>
     </header>
+    
+
+
+
+
     <section id="container" class="container">
         <div id="interactive" class="viewport"></div>
-        <br>
+        
+    </section>
+    <br>
         <br>
         <center>
-            <div class="border" style="border-color: #108B5E !important;">
-                <form onsubmit="return false;">
-                    <label for="locinput" style="margin-top: 20px;"">Location</label>
-                    <input type="text" id="locinput" name="locinput" placeholder="Tap to scan for location." onfocus="highlight_input(this)">
-                    <br>
-                    <label for="skuinput" style="margin-top: 45px;">SKU</label>
-                    <input type="text" id="skuinput" name="skuinput" placeholder="Tap to scan for SKU." style="margin-bottom: 30px;" onfocus="highlight_input(this)">
-                    <!-- <label for="country">Country</label>
-            <select id="country" name="country">
-                <option value="australia">Australia</option>
-                <option value="canada">Canada</option>
-                <option value="usa">USA</option> -->
-                    </select>
-                    <button class="sub" onclick="datasubmit()">Submit</button>
-                </form>
+            <div class="border container" style="border-color: #108B5E !important; width: 90%;">
+                
+
+
+                <h4 style="margin-top: 35px;" >Location</h4>
+                <button id="l" class="box" onclick="lbluefunc(this)">Tap to Scan for Location</button>
+
+                  <h4 style="margin-top: 35px;">SKU</h4>
+                <button id="s" class="box" onclick="sbluefunc(this)">Tap to Scan for SKU</button>
+
+
+
+                <button style="margin-bottom: 45px; margin-top: 55px;" class="sub" onclick="datasubmit()">Submit</button>
+
+
+
             </div>
         </center>
-    </section>
+
+
+        <script type="text/javascript">
+           
+
+
+
+
+            function lbluefunc(elem){
+
+               try{
+                $("#s").removeClass("blue");
+               }
+               catch(e){
+               }
+                 $("#l").addClass("blue");
+               
+               highlight_input(elem);
+
+            }
+
+            function sbluefunc(elem){
+               
+                 try{
+                $("#l").removeClass("blue");
+               }
+               catch(e){
+               }
+                 $("#s").addClass("blue");
+
+                highlight_input(elem);
+
+            }
+
+
+
+
+
+
+
+        </script>
 
 
 
@@ -236,19 +290,97 @@
     <script src="js/bootstrap.min.js"></script>
     
     <script type="text/javascript ">
-    (function() {
-        emailjs.init("user_oy3aSgyssQVURnWQA0Jl8");
-    })();
+(function() {
+    emailjs.init("user_oy3aSgyssQVURnWQA0Jl8");
+})();
 
-      function datasubmit() {
-        alert("SUCCESS");
-        emailjs.send("XMAIL", "qb_scout_update", { message_html: "SKU: " + skuinput.value + "<br><br><br>Location: " + locinput.value + "<br><br>"}).then(function(response) {
-            console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
-        }, function(err) {
-            console.log("FAILED. error=", err);
-        });
-    }
-    </script>
+function datasubmit() {
+    
+    alert("test");
+
+    var send_location = document.getElementById("l").innerHTML;
+    var send_sku = document.getElementById("s").innerHTML;
+
+        alert("SUCCESS: " + send_sku + ", " + send_location);
+
+    emailjs.send("XMAIL", "qb_scout_update", { message_html: "SKU: " + send_sku + "<br><br><br>Location: " + send_location + "<br><br>" }).then(function(response) {
+        console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
+    }, function(err) {
+        console.log("FAILED. error=", err);
+    });
+}
+</script>
 </body>
 
 </html>
+
+
+
+
+<!-- 
+
+<form onsubmit="return false;">
+                    <label for="locinput" style="margin-top: 20px;"">Location</label>
+                    <input type="text" id="locinput" name="locinput" placeholder="Tap to scan for location." onfocus="highlight_input(this)">
+                    <br>
+                    <br>
+                    <label for="skuinput" style="margin-top: 45px;">SKU</label>
+                    <input type="text" id="skuinput" name="skuinput" placeholder="Tap to scan for SKU." style="margin-bottom: 30px;" onfocus="highlight_input(this)"> -->
+                    <!-- <label for="country">Country</label>
+            <select id="country" name="country">
+                <option value="australia">Australia</option>
+                <option value="canada">Canada</option>
+                <option value="usa">USA</option> -->
+                   <!--  </select>
+                    <button class="sub" onclick="datasubmit()">Submit</button>
+                </form> -->
+
+<!-- 
+
+                 input[type=text],
+        select {
+            width: 90%;
+            height: 70px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 90%;
+            background-color: #24745B;
+            color: white;
+            padding: 14px 20px;
+            border-width: 7px;
+            border-color: #c5cfe2;
+            border-style: solid;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 30px;
+            margin-top: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0px 0px 35px #565656;
+            font-weight: bold;
+
+            /*#24745B*/
+        }
+ -->
+
+
+
+
+<!-- 
+
+
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        label {
+            font-size: 36px;
+            color: white;
+        } -->

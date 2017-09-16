@@ -306,7 +306,7 @@ $(function() {
 
         }
 
-        input_target.value = code;
+        input_target.innerHTML = code;
         // if(loc_captured = false)
         // {
 
@@ -334,6 +334,7 @@ $(function() {
 
 
 var input_target;
+
 
 function highlight_input(elem){
     
