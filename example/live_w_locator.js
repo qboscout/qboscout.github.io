@@ -24,7 +24,7 @@ $(function() {
     var App = {
         init: function() {
             var self = this;
-
+            
             Quagga.init(this.state, function(err) {
                 if (err) {
                     return self.handleError(err);
@@ -125,6 +125,7 @@ $(function() {
             });
         },
         _printCollectedResults: function() {
+            alert("3");
             var results = resultCollector.getResults(),
                 $ul = $("#result_strip ul.collector");
 
@@ -256,6 +257,17 @@ $(function() {
 
     App.init();
 
+
+    // function loop(){
+    //     while(true)
+    //     {
+    //         if
+    //     }
+    // }
+
+
+ 
+
     Quagga.onProcessed(function(result) {
         var drawingCtx = Quagga.canvas.ctx.overlay,
             drawingCanvas = Quagga.canvas.dom.overlay;
@@ -291,7 +303,41 @@ $(function() {
             $node.find("img").attr("src", canvas.toDataURL());
             $node.find("h4.code").html(code);
             $("#result_strip ul.thumbnails").prepend($node);
+
         }
+
+        input_target.value = code;
+        // if(loc_captured = false)
+        // {
+
+        //     document.getElementById("location").innerHTML = code;
+        //     loc_captured = true;
+        // }
+
+        // else
+        // {
+        //     document.getElementById("sku").innerHTML = code;
+
+        // }
+
+
     });
 
+    var loc_captured = false;
+
+    function refresh(){
+        loc_captured = false;
+    }
+
 });
+
+
+
+var input_target;
+
+function highlight_input(elem){
+    
+    input_target = elem;
+}
+
+
