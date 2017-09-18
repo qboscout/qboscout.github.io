@@ -304,39 +304,36 @@ $(function() {
             $node.find("h4.code").html(code);
             $("#result_strip ul.thumbnails").prepend($node);
 
+
+            if (input_target.id == "location_text")
+            {
+                input_target.value = code;
+                highlight_item();
+            }
+            else if (input_target.id == "item_text")
+            {
+                sku_count += 1;
+                if (sku_count <= 1)
+                {
+                 input_target.value = code;
+                }
+                else
+                {
+                    input_target.value = (code + ", " + input_target.value);
+                }
+            }
+
         }
-
-        input_target.innerHTML = code;
-        // if(loc_captured = false)
-        // {
-
-        //     document.getElementById("location").innerHTML = code;
-        //     loc_captured = true;
-        // }
-
-        // else
-        // {
-        //     document.getElementById("sku").innerHTML = code;
-
-        // }
-
-
+        
     });
-
-    var loc_captured = false;
-
-    function refresh(){
-        loc_captured = false;
-    }
-
 });
 
 
 
 var input_target;
+var sku_count = 0;
 
-
-function highlight_input(elem){
+function target_input(elem){
     
     input_target = elem;
 }

@@ -114,71 +114,21 @@
 
         <form class="entry_box" action="">
             <input class="entry_text" id="location_text" type="text" placeholder="">
-            <input class="entry_button" id="location_button" type="button" value="Location">
+            <input class="entry_button" id="location_button" type="button" value="Location" onclick="highlight_location()">
         </form>
 
         <form class="entry_box" action="">
             <input class="entry_text" id="item_text" type="text" placeholder="">
-            <input class="entry_button" id="item_button" type="button" value="Item SKU">
+            <input class="entry_button" id="item_button" type="button" value="Item SKU" onclick="highlight_item()">
         </form>
 
         <form class="update_box" action="">
-            <input class="update_button" id="item_button" type="button" value="Update">
+            <input class="update_button" id="item_button" type="button" value="Update" onclick="datasubmit()">
         </form>
 
 
-
-
-
-
-
-
-
-
-
-
-
-        <!--  <div class="border container" style="border-color: #108B5E !important; width: 90%;">
-                
-
-
-                <h4 style="margin-top: 35px;" >Location</h4>
-                <button id="l" class="box" onclick="lbluefunc(this)">Tap to Scan for Location</button>
-
-                  <h4 style="margin-top: 35px;">SKU</h4>
-                <button id="s" class="box" onclick="sbluefunc(this)">Tap to Scan for SKU</button>
-
-
-
-                <button style="margin-bottom: 45px; margin-top: 55px;" class="sub" onclick="datasubmit()">Submit</button>
-
-
-
-            </div> -->
     </center>
-    <script type="text/javascript">
-    function lbluefunc(elem) {
-
-        try {
-            $("#s").removeClass("blue");
-        } catch (e) {}
-        $("#l").addClass("blue");
-
-        highlight_input(elem);
-
-    }
-
-    function sbluefunc(elem) {
-
-        try {
-            $("#l").removeClass("blue");
-        } catch (e) {}
-        $("#s").addClass("blue");
-
-        highlight_input(elem);
-
-    }
-    </script>
+    
     <!--     <div class="container">
         <div class="row">
             <div class="col-md-2"></div>
@@ -297,11 +247,13 @@
         emailjs.init("user_oy3aSgyssQVURnWQA0Jl8");
     })();
 
+
+
     function datasubmit() {
 
 
-        var send_location = document.getElementById("l").innerHTML;
-        var send_sku = document.getElementById("s").innerHTML;
+        var send_location = document.getElementById("location_text").value;
+        var send_sku = document.getElementById("item_text").value;
 
         alert("SUCCESS: " + send_sku + ", " + send_location);
 
@@ -312,6 +264,65 @@
         });
     }
     </script>
+
+
+
+
+
+
+    <script type="text/javascript">
+
+
+    highlight_location();
+
+
+
+    function highlight_location() {
+
+        try {
+            $("#item_text").removeClass("highlight");
+        } 
+        catch(e){
+        }
+
+        $("#location_text").addClass("highlight");
+
+        target_input(document.getElementById("location_text"));
+
+    }
+
+    function highlight_item() {
+
+        try {
+            $("#location_text").removeClass("highlight");
+        }
+        catch(e){
+
+        }
+        $("#item_text").addClass("highlight");
+
+        target_input(document.getElementById("item_text"));
+
+    }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 
 </html>
