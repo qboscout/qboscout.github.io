@@ -66,10 +66,20 @@ footer {
 }
 
 
+video
+{
+  border-radius: 25px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #c4d9df #a4c3ca #83afb7;
+}
+
+
 #interactive.viewport canvas, video {
   float: left;
-  width: 640px;
-  height: 480px;
+  width: 634px;
+  height: 474px;
+  
 }
 
 #interactive.viewport canvas.drawingBuffer, video.drawingBuffer {
@@ -314,3 +324,77 @@ i.icon-24-scan {
     width: 16px;
   }
 }
+
+
+
+
+
+
+
+
+
+
+.entry_box {
+        background-color: #dee5f4 !important;
+        background-image: linear-gradient(#fff, #c2cde8) !important;
+        border-radius: 35px !important;
+        border-width: 3px !important;
+        border-style: solid !important;
+        border-color: #c4d9df #a4c3ca #83afb7 !important;
+        width: 320px !important;
+        height: 55px !important;
+        padding: 10px !important;
+        margin: 2px auto 30px !important;
+        overflow: hidden !important;
+       
+        /* Clear floats */
+    }
+
+    .entry_text,
+    .entry_button {
+        float: left !important;
+    }
+
+    .entry_text {
+        padding: 5px 9px !important;
+        height: 43px !important;
+        width: 180px !important;
+        border: 1px solid #a4c3ca !important;
+        font: normal 18px 'trebuchet MS', arial, helvetica !important;
+        background: white !important;
+        /*#f1f1f1*/
+        border-radius: 50px 3px 3px 50px !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset, 0 1px 0 rgba(255, 255, 255, 1) !important;
+    }
+
+    .entry_button {
+        /*#95d788*/
+        background-color: #108c5e !important;
+        background-image: linear-gradient(#0eb275, #108c5e) !important;
+        border-radius: 3px 50px 50px 3px !important;
+        border-width: 1px !important;
+        border-style: solid !important;
+        border-color: #7eba7c #578e57 #447d43 !important;
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.3),
+        0 1px 0 rgba(255, 255, 255, 0.3) inset !important;
+        height: 55px !important;
+        margin: 0 0 0 10px !important;
+        padding: 0 !important;
+        width: 110px !important;
+        cursor: pointer !important;
+        font: bold 18px Arial, Helvetica !important;
+        color: white; 
+        /*text-shadow: 0 1px 0 rgba(255,255,255,0.5) !important;*/
+    }
+    /*#submit:hover {       
+    background-color: #95d788;
+    background-image: linear-gradient(#6cbb6b, #95d788);
+}   */
+
+    .entry_button:active {
+        background: #95d788 !important;
+        outline: none !important;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset !important;
+    }
+
+

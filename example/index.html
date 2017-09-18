@@ -7,107 +7,132 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no" />
     <link rel="stylesheet" type="text/css" href="css/themes.css" />
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet">
+<!--     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet"> -->
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
 </head>
 
 <body>
     <style>
-
-
-
-
-        .blue
-        {
-            border-color: #4286f4 !important;
-
-        }
-
-        .box
-         {
-            width: 80%;
-            height: 70px;
-            background-color: white;
-            color: #687589;
-            /*padding: 140px 20px;*/
-            
-            border-width: 2px;
-            border-color: #cbdaf2;
-            border-style: solid;
-            border-radius: 7px;
-            cursor: pointer;
-            font-size: 30px;
-            margin-top: 40px;
-            margin-bottom: 30px;
-            /*box-shadow: 0px 0px 35px #565656;*/
-            font-weight: bold;
-
-            /*#24745B*/
-        }
-
-       
-        .sub {
-            width: 50%;
-            background-color: #24745B;
-            color: white;
-            /*padding: 14px 20px;*/
-            padding-top: 20px;
-            padding-bottom: 25px;
-            border-width: 7px;
-            border-color: #c5cfe2;
-            border-style: solid;
-            border-radius: 7px;
-            cursor: pointer;
-            font-size: 30px;
-            margin-top: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0px 0px 35px #565656;
-            font-weight: bold;
-
-            /*#24745B*/
-        }
-
-
-        .border {
-            border-radius: 5px;
-            background-color: #108B5E;
-            padding: 20px;
-            border-color: #108B5E;
-
     
 
-        }
 
 
-        h4
-        {
-            color: white;
-            font-size: 40px;
-        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+    .blue {
+        border-color: #4286f4 !important;
+    }
+
+    .box {
+        width: 80%;
+        height: 70px;
+        background-color: white;
+        color: #687589;
+        padding: 140px 20px;
+        border-width: 2px;
+        border-color: #cbdaf2;
+        border-style: solid;
+        border-radius: 7px;
+        cursor: pointer;
+        font-size: 30px;
+        margin-top: 40px;
+        margin-bottom: 30px;
+        box-shadow: 0px 0px 35px #565656;
+        font-weight: bold;
+
+        #24745B
+    }
+
+
+    .sub {
+        width: 50%;
+        background-color: #24745B;
+        color: white;
+        padding: 14px 20px;
+        padding-top: 20px;
+        padding-bottom: 25px;
+        border-width: 7px;
+        border-color: #c5cfe2;
+        border-style: solid;
+        border-radius: 7px;
+        cursor: pointer;
+        font-size: 30px;
+        margin-top: 40px;
+        margin-bottom: 30px;
+        box-shadow: 0px 0px 35px #565656;
+        font-weight: bold;
+
+        #24745B*
+    }
+
+
+    .border {
+        border-radius: 5px;
+        background-color: #108B5E;
+        padding: 20px;
+        border-color: #108B5E;
+    }
+*/
+
+    h4 {
+        color: white;
+        font-size: 40px;
+    }
     </style>
+
+
+
     <header style="background-color: #108c5e;">
         <hr>
         <div class="headline">
             <center>
-                <img src="qb_scout_banner.png" style="width:80%" alt="JB's Furniture">
+                <img src="qb_scout_banner.png" style="width:60%" alt="JB's Furniture">
             </center>
         </div>
         <hr>
     </header>
-    
-
-
-
-
     <section id="container" class="container">
         <div id="interactive" class="viewport"></div>
-        
     </section>
-    <br>
-        <br>
-        <center>
-            <div class="border container" style="border-color: #108B5E !important; width: 90%;">
+  <!--   <br>
+    <br> -->
+    <center>
+
+
+        <form class="entry_box" action="">
+            <input class="entry_text" id="location_text" type="text" placeholder="">
+            <input class="entry_button" id="location_button" type="button" value="Location">
+        </form>
+
+        <form class="entry_box" action="">
+            <input class="entry_text" id="item_text" type="text" placeholder="">
+            <input class="entry_button" id="item_button" type="button" value="Item SKU">
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+        <!--  <div class="border container" style="border-color: #108B5E !important; width: 90%;">
                 
 
 
@@ -123,56 +148,31 @@
 
 
 
-            </div>
-        </center>
+            </div> -->
+    </center>
+    <script type="text/javascript">
+    function lbluefunc(elem) {
 
+        try {
+            $("#s").removeClass("blue");
+        } catch (e) {}
+        $("#l").addClass("blue");
 
-        <script type="text/javascript">
-           
+        highlight_input(elem);
 
+    }
 
+    function sbluefunc(elem) {
 
+        try {
+            $("#l").removeClass("blue");
+        } catch (e) {}
+        $("#s").addClass("blue");
 
-            function lbluefunc(elem){
+        highlight_input(elem);
 
-               try{
-                $("#s").removeClass("blue");
-               }
-               catch(e){
-               }
-                 $("#l").addClass("blue");
-               
-               highlight_input(elem);
-
-            }
-
-            function sbluefunc(elem){
-               
-                 try{
-                $("#l").removeClass("blue");
-               }
-               catch(e){
-               }
-                 $("#s").addClass("blue");
-
-                highlight_input(elem);
-
-            }
-
-
-
-
-
-
-
-        </script>
-
-
-
-  
-
-
-
+    }
+    </script>
     <!--     <div class="container">
         <div class="row">
             <div class="col-md-2"></div>
@@ -288,35 +288,29 @@
     <script type="text/javascript " src="https://cdn.emailjs.com/dist/email.min.js "></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    
     <script type="text/javascript ">
-(function() {
-    emailjs.init("user_oy3aSgyssQVURnWQA0Jl8");
-})();
+    (function() {
+        emailjs.init("user_oy3aSgyssQVURnWQA0Jl8");
+    })();
 
-function datasubmit() {
-    
-    alert("test");
+    function datasubmit() {
 
-    var send_location = document.getElementById("l").innerHTML;
-    var send_sku = document.getElementById("s").innerHTML;
+
+        var send_location = document.getElementById("l").innerHTML;
+        var send_sku = document.getElementById("s").innerHTML;
 
         alert("SUCCESS: " + send_sku + ", " + send_location);
 
-    emailjs.send("XMAIL", "qb_scout_update", { message_html: "SKU: " + send_sku + "<br><br><br>Location: " + send_location + "<br><br>" }).then(function(response) {
-        console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
-    }, function(err) {
-        console.log("FAILED. error=", err);
-    });
-}
-</script>
+        emailjs.send("XMAIL", "qb_scout_update", { message_html: "SKU: " + send_sku + "<br><br><br>Location: " + send_location + "<br><br>" }).then(function(response) {
+            console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
+        }, function(err) {
+            console.log("FAILED. error=", err);
+        });
+    }
+    </script>
 </body>
 
 </html>
-
-
-
-
 <!-- 
 
 <form onsubmit="return false;">
@@ -326,15 +320,14 @@ function datasubmit() {
                     <br>
                     <label for="skuinput" style="margin-top: 45px;">SKU</label>
                     <input type="text" id="skuinput" name="skuinput" placeholder="Tap to scan for SKU." style="margin-bottom: 30px;" onfocus="highlight_input(this)"> -->
-                    <!-- <label for="country">Country</label>
+<!-- <label for="country">Country</label>
             <select id="country" name="country">
                 <option value="australia">Australia</option>
                 <option value="canada">Canada</option>
                 <option value="usa">USA</option> -->
-                   <!--  </select>
+<!--  </select>
                     <button class="sub" onclick="datasubmit()">Submit</button>
                 </form> -->
-
 <!-- 
 
                  input[type=text],
@@ -368,10 +361,6 @@ function datasubmit() {
             /*#24745B*/
         }
  -->
-
-
-
-
 <!-- 
 
 
