@@ -63,22 +63,18 @@ footer {
 #interactive.viewport {
   width: 640px;
   height: 480px;
-}
-
-
-video
-{
-  border-radius: 25px;
-  border-width: 3px;
+  border-radius: 5px;
+  border-width: 5px;
   border-style: solid;
   border-color: #c4d9df #a4c3ca #83afb7;
 }
 
 
+
 #interactive.viewport canvas, video {
   float: left;
-  width: 634px;
-  height: 474px;
+  width: 640px;
+  height: 480px;
   
 }
 
